@@ -14,7 +14,10 @@ variable "project" {
 }
 
 variable "project_iam_member_roles" {
-  type        = list(string)
+  type = list(object({
+    role    = string
+    project = string
+  }))
   default     = []
   description = "List of project IAM member roles to attach to the Service Account."
 }

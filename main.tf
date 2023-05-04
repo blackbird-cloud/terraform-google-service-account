@@ -6,10 +6,10 @@ resource "google_service_account" "sa" {
 
 resource "google_project_iam_member" "roles" {
   for_each = {
-    for role in var.project_iam_member_roles : role.name => role
+    for role in var.project_iam_member_roles : "${role.role}-${role.project}" => role
   }
 
-  role    = each.value
+  role    = each.value.role
   project = each.value.project
   member  = google_service_account.sa.member
 }
