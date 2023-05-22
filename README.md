@@ -24,6 +24,7 @@ No modules.
 | [google_project_iam_member.roles](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_iam_member) | resource |
 | [google_service_account.sa](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account) | resource |
 | [google_service_account_iam_member.workload](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account_iam_member) | resource |
+| [google_storage_bucket_iam_member.default](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket_iam_member) | resource |
 
 ## Inputs
 
@@ -35,6 +36,7 @@ No modules.
 | <a name="input_kubernetes_service_account_name"></a> [kubernetes\_service\_account\_name](#input\_kubernetes\_service\_account\_name) | Name of the Kubernetes Service Account to attach to this Google Service Account. | `string` | `""` | no |
 | <a name="input_project"></a> [project](#input\_project) | Google Project ID. | `string` | n/a | yes |
 | <a name="input_project_iam_member_roles"></a> [project\_iam\_member\_roles](#input\_project\_iam\_member\_roles) | List of project IAM member roles to attach to the Service Account. | <pre>list(object({<br>    role    = string<br>    project = string<br>  }))</pre> | `[]` | no |
+| <a name="input_storage_bucket_iam_members"></a> [storage\_bucket\_iam\_members](#input\_storage\_bucket\_iam\_members) | List of Storage bucket IAM member roles to attach to the Service Account. | <pre>list(object({<br>    role   = string<br>    bucket = string<br>  }))</pre> | `[]` | no |
 | <a name="input_workload_identity_user"></a> [workload\_identity\_user](#input\_workload\_identity\_user) | Wether to attach the roles/iam.workloadIdentityUser Service Account IAM member to the Google Service Account | `bool` | `false` | no |
 
 ## Outputs
