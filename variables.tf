@@ -22,6 +22,15 @@ variable "project_iam_member_roles" {
   description = "List of project IAM member roles to attach to the Service Account."
 }
 
+variable "storage_bucket_iam_members" {
+  type = list(object({
+    role   = string
+    bucket = string
+  }))
+  default     = []
+  description = "List of Storage bucket IAM member roles to attach to the Service Account."
+}
+
 variable "workload_identity_user" {
   type        = bool
   default     = false

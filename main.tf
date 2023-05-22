@@ -21,3 +21,14 @@ resource "google_service_account_iam_member" "workload" {
   service_account_id = google_service_account.sa.name
   member             = "serviceAccount:${var.project}.svc.id.goog[${var.kubernetes_namespace}/${var.kubernetes_service_account_name}]"
 }
+
+resource "google_storage_bucket_iam_member" "default" {
+  for_each = {
+    for role in var.storage_bucket_iam_members : "${role.bucket}-${role.role}" => role
+  }
+
+  role   = each.value.role
+  bucket = each.value.bucket
+  member = google_service_account.sa.member
+}
+
