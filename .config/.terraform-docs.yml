@@ -2,3 +2,35 @@ formatter: "markdown"
 
 header-from: ./.config/header.md
 footer-from: ./.config/footer.md
+
+output:
+  file: ./README.md
+  mode: replace
+  template: |-
+    {{ .Content }}
+
+sections:
+  hide:
+    - modules
+
+content: |-
+  # Google Cloud Platform Service Account Terraform module
+  A Terraform module which helps you configure a Google Cloud Platform Service Account, and optional GKE Workload Identity.
+  {{ .Header }}
+
+  ## Example
+  ```hcl
+  {{ include "./example/main.tf" }}
+  ```
+
+  {{ .Requirements }}
+
+  {{ .Providers }}
+
+  {{ .Resources }}
+
+  {{ .Inputs }}
+
+  {{ .Outputs }}
+
+  {{ .Footer }}
