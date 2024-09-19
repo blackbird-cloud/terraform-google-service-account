@@ -14,8 +14,7 @@ sections:
     - modules
 
 content: |-
-  # Google Cloud Platform Service Account Terraform module
-  A Terraform module which helps you configure a Google Cloud Platform Service Account, and optional GKE Workload Identity.
+  {{ include "./.config/title.md"}}
 
   {{ .Header }}
 
