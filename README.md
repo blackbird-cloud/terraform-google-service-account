@@ -1,7 +1,8 @@
-# Google Cloud Platform Service Account Terraform module
-A Terraform module which helps you configure a Google Cloud Platform Service Account, and optional GKE Workload Identity.
+<!-- BEGIN_TF_DOCS -->
+# Terraform Google Service Account Module
+A Terraform module which helps you create Google Service Accounts.
 
-[![blackbird-logo](https://raw.githubusercontent.com/blackbird-cloud/terraform-module-template/main/.config/logo_simple.png)](https://www.blackbird.cloud)
+[![blackbird-logo](https://raw.githubusercontent.com/blackbird-cloud/terraform-module-template/main/.config/logo_simple.png)](https://blackbird.cloud)
 
 ## Example
 ```hcl
@@ -46,7 +47,7 @@ module "service_account" {
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | 4.63.1 |
+| <a name="provider_google"></a> [google](#provider\_google) | >= 4 |
 
 ## Resources
 
@@ -85,4 +86,5 @@ Checkout our other :point\_right: [terraform modules](https://registry.terraform
 
 ## Copyright
 
-Copyright © 2017-2023 [Blackbird Cloud](https://www.blackbird.cloud)
+Copyright © 2017-2024 [Blackbird Cloud](https://blackbird.cloud)
+<!-- END_TF_DOCS -->
