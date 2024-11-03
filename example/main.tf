@@ -9,7 +9,6 @@ module "service_account" {
   workload_identity_user          = true
   kubernetes_namespace            = "monitoring"
   kubernetes_service_account_name = "my-app"
-
   project_iam_member_roles = [
     {
       role    = "roles/pubsub.publisher",
@@ -25,4 +24,5 @@ module "service_account" {
       project = "my-other-project"
     },
   ]
+  service_account_iam_member_roles = []
 }

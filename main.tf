@@ -24,6 +24,16 @@ resource "google_project_iam_member" "roles" {
   }
 }
 
+resource "google_service_account_iam_member" "roles" {
+  for_each = {
+    for role in var.service_account_iam_member_roles : "${role.role}-${role.project}" => role
+  }
+
+  service_account_id = google_service_account.sa.name
+  role               = each.value.role
+  member             = each.value.member
+}
+
 resource "google_service_account_iam_member" "workload" {
   count = var.workload_identity_user && var.kubernetes_namespace != "" && var.kubernetes_service_account_name != "" ? 1 : 0
 
