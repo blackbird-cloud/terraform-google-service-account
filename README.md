@@ -1,3 +1,4 @@
+<!-- BEGIN_TF_DOCS -->
 # Terraform Google Service Account Module
 A Terraform module which helps you create Google Service Accounts.
 
@@ -46,7 +47,7 @@ module "service_account" {
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | 4.63.1 |
+| <a name="provider_google"></a> [google](#provider\_google) | >= 4 |
 
 ## Resources
 
@@ -68,9 +69,9 @@ module "service_account" {
 | <a name="input_kubernetes_namespace"></a> [kubernetes\_namespace](#input\_kubernetes\_namespace) | Kubernetes namespace that hosts the Kubernetes Service Account attached to this Google Service Account. | `string` | `null` | no |
 | <a name="input_kubernetes_service_account_name"></a> [kubernetes\_service\_account\_name](#input\_kubernetes\_service\_account\_name) | Name of the Kubernetes Service Account to attach to this Google Service Account. | `string` | `null` | no |
 | <a name="input_project"></a> [project](#input\_project) | Google Project ID. | `string` | n/a | yes |
-| <a name="input_project_iam_member_roles"></a> [project\_iam\_member\_roles](#input\_project\_iam\_member\_roles) | List of project IAM member roles to attach to the Service Account. | <pre>list(object({<br>    role    = string<br>    project = string<br>    conditions = optional(list(object({<br>      expression  = string<br>      title       = string<br>      description = optional(string)<br>    })))<br>  }))</pre> | `[]` | no |
-| <a name="input_service_account_iam_member_roles"></a> [service\_account\_iam\_member\_roles](#input\_service\_account\_iam\_member\_roles) | List of project IAM member roles to attach to the Service Account. | <pre>list(object({<br>    role   = string<br>    member = string<br>  }))</pre> | `[]` | no |
-| <a name="input_storage_bucket_iam_members"></a> [storage\_bucket\_iam\_members](#input\_storage\_bucket\_iam\_members) | List of Storage bucket IAM member roles to attach to the Service Account. | <pre>list(object({<br>    role   = string<br>    bucket = string<br>    conditions = optional(list(object({<br>      expression  = string<br>      title       = string<br>      description = optional(string)<br>    })))<br>  }))</pre> | `[]` | no |
+| <a name="input_project_iam_member_roles"></a> [project\_iam\_member\_roles](#input\_project\_iam\_member\_roles) | List of project IAM member roles to attach to the Service Account. | <pre>list(object({<br/>    role    = string<br/>    project = string<br/>    conditions = optional(list(object({<br/>      expression  = string<br/>      title       = string<br/>      description = optional(string)<br/>    })))<br/>  }))</pre> | `[]` | no |
+| <a name="input_service_account_iam_member_roles"></a> [service\_account\_iam\_member\_roles](#input\_service\_account\_iam\_member\_roles) | List of project IAM member roles to attach to the Service Account. | <pre>list(object({<br/>    role   = string<br/>    member = string<br/>  }))</pre> | `[]` | no |
+| <a name="input_storage_bucket_iam_members"></a> [storage\_bucket\_iam\_members](#input\_storage\_bucket\_iam\_members) | List of Storage bucket IAM member roles to attach to the Service Account. | <pre>list(object({<br/>    role   = string<br/>    bucket = string<br/>    conditions = optional(list(object({<br/>      expression  = string<br/>      title       = string<br/>      description = optional(string)<br/>    })))<br/>  }))</pre> | `[]` | no |
 | <a name="input_workload_identity_user"></a> [workload\_identity\_user](#input\_workload\_identity\_user) | Wether to attach the roles/iam.workloadIdentityUser Service Account IAM member to the Google Service Account | `bool` | `false` | no |
 
 ## Outputs
@@ -88,3 +89,4 @@ Checkout our other :point\_right: [terraform modules](https://registry.terraform
 ## Copyright
 
 Copyright © 2017-2024 [Blackbird Cloud](https://blackbird.cloud)
+<!-- END_TF_DOCS -->
